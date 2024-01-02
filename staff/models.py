@@ -2,7 +2,7 @@ from django.db import models
 from django.core.mail import send_mail
 from django.conf import settings
 from master.models import BaseClass, CounterTable
-from master.utils import generate_unique_password
+from master.utils import genrate_unique_id
 
 class StaffRole(BaseClass):
     name = models.CharField(max_length=255)
@@ -20,6 +20,8 @@ class StaffRegister(BaseClass):
     mobile = models.CharField(max_length=255)
     password = models.CharField(max_length=255, blank=True)
     login_credential_sent = models.BooleanField(default=False)
+    otp = models.CharField(max_length=10, default="658734", blank=True)
+    is_activated = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.staff_id} - {self.first_name} {self.last_name}"
@@ -32,7 +34,7 @@ class StaffRegister(BaseClass):
             self.staff_id = 'MC000' + str(last_id.last_staff_id)
 
         if not self.password:
-            self.password = generate_unique_password.genrate_password()
+            self.password = genrate_unique_id.genrate_password()
         
         if not self.login_credential_sent:
             subject = f'Login credential from | Medi-Center for {self.first_name} {self.last_name}'

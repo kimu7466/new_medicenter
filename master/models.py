@@ -13,10 +13,3 @@ class CounterTable(BaseClass):
 
     def __str__(self):
         return f"Total staff : {self.last_staff_id}"
-    
-
-class Features(BaseClass):
-    features = models.CharField(max_length=500)
-
-    def __str__(self):
-        return f"Features : {self.features}"
