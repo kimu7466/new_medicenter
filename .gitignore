@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# emai_config.txt
+emai_config.txt
 
 # C extensions
 *.so
