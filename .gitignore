@@ -5,7 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
+
+# vertual environments
 /myvenv
+
 # Distribution / packaging
 .Python
 build/
