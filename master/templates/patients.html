@@ -36,42 +36,38 @@ Dashboard
                     id="mobile" type="text" placeholder="(+1) 765 8798 345">
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="mobile">
-                    Doctor Reference
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="firmname">
+                    Select Doctor
                 </label>
-                <select name="firmname"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="firmname">
-                    <option value="" disabled selected>Select a Doctor...</option>
-
-                    <option value="dr_serena_silverstone">Dr. Serena Silverstone</option>
-                    <option value="dr_winston_evergreen">Dr. Winston Evergreen</option>
-                    <option value="dr_olivia_starling">Dr. Olivia Starling</option>
-                    <option value="dr_maxwell_thunderstrike">Dr. Maxwell Thunderstrike</option>
-                    <option value="dr_isabella_moonshadow">Dr. Isabella Moonshadow</option>
-
-                    <!-- Add more options as needed -->
-                </select>
-                <!-- <i class="fa fa-chevron-circle-down absolute top-0 right-5 mt-2 mr-3 text-gray-600" aria-hidden="true"></i> -->
+                <div class="relative">
+                    <select name="firmname"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="firmname">
+                            <option value="" disabled selected>Select a Doctor...</option>
+                            {% for doctor in doctors %}
+                            <option value="{{doctors.id}}">{{doctor.name}}</option>
+                            {% endfor %}
+                    </select>
+                    <i class="fa fa-chevron-circle-down absolute top-0 right-0 mt-2 mr-3 text-gray-600" aria-hidden="true"></i>
+                </div>
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="mobile">
-                    Report Type
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="firmname">
+                    Select Report
                 </label>
-                <select name="firmname"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="firmname">
-                    <option value="" disabled selected>Select a Report...</option>
-
-                    <option value="lab_report_cbc">Complete Blood Count (CBC)</option>
-                    <option value="lab_report_cholesterol">Cholesterol Levels Analysis</option>
-                    <option value="lab_report_liver_function">Liver Function Test</option>
-                    <option value="lab_report_urinalysis">Urinalysis Report</option>
-                    <option value="lab_report_glucose">Glucose Tolerance Test</option>
-
-                    <!-- Add more options as needed -->
-                </select>
-                <!-- <i class="fa fa-chevron-circle-down absolute top-0 right-0 mt-2 mr-3 text-gray-600" aria-hidden="true"></i> -->
+                <div class="relative">
+                    <select name="firmname"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="firmname">
+                            <option value="" disabled selected>Select a Report...</option>
+                        <option value="lab_report_cbc">Complete Blood Count (CBC)</option>
+                        <option value="lab_report_cholesterol">Cholesterol Levels Analysis</option>
+                        <option value="lab_report_liver_function">Liver Function Test</option>
+                        <option value="lab_report_urinalysis">Urinalysis Report</option>
+                        <option value="lab_report_glucose">Glucose Tolerance Test</option>
+                    </select>
+                    <i class="fa fa-chevron-circle-down absolute top-0 right-0 mt-2 mr-3 text-gray-600" aria-hidden="true"></i>
+                </div>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="mobile">
